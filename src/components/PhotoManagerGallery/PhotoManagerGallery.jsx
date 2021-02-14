@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { nanoid } from 'nanoid'
 
 const Container = styled.div({
   display: 'flex',
@@ -64,10 +65,18 @@ function PhotoManagerGallery(props) {
 
   if (images.length < 3) {
     while (images.length + emptyBlocks.length < 3) {
-      emptyBlocks.push(<EmptyBlock className="material-icons">border_clear</EmptyBlock>)
+      emptyBlocks.push(
+        <EmptyBlock key={nanoid()} className="material-icons">
+          border_clear
+        </EmptyBlock>
+      )
     }
   } else {
-    emptyBlocks.push(<EmptyBlock className="material-icons">border_clear</EmptyBlock>)
+    emptyBlocks.push(
+      <EmptyBlock key={nanoid()} className="material-icons">
+        border_clear
+      </EmptyBlock>
+    )
   }
 
   return (
