@@ -89,6 +89,7 @@ function PhotoManagerGallery(props) {
 
 PhotoManagerGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
 export default PhotoManagerGallery
